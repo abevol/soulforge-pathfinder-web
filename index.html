@@ -74,7 +74,12 @@
     .brand-mark {
       width: 34px; height: 34px; flex: none;
       background: var(--yellow); border: var(--border); border-radius: 10px;
-      display: grid; place-items: center; font-size: 18px;
+      display: grid; place-items: center;
+      overflow: hidden;
+    }
+    .brand-mark img {
+      width: 100%; height: 100%; display: block;
+      object-fit: cover; image-rendering: pixelated;
     }
     .nav-links { display: flex; gap: 20px; margin-left: auto; }
     .nav-links a { font-weight: 700; text-decoration: none; font-size: .98rem; }
@@ -250,7 +255,7 @@
   <header class="nav">
     <div class="nav-inner">
       <a class="brand" href="#">
-        <span class="brand-mark">🧭</span>
+        <span class="brand-mark"><img src="app_icon.png" alt=""></span>
         <span data-i18n="brand">铸魂领路者</span>
       </a>
       <nav class="nav-links">
