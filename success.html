@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>支付成功 Payment Successful — 铸魂领路者 Soulforge Pathfinder</title>
-  <meta name="description" content="支付成功：收据由 Creem 发送，加入 Discord 获取支持。Payment successful: receipt sent by Creem, join Discord for support.">
+  <title>支付成功 — 铸魂领路者 Soulforge Pathfinder</title>
+  <meta name="description" content="支付成功：收据由 Creem 发送，Discord 社区支持。">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <style>
     :root {
@@ -25,10 +25,12 @@
     body { font-family: var(--font); color: var(--ink); background: var(--lavender); line-height: 1.7; -webkit-font-smoothing: antialiased; }
     a { color: inherit; }
     .wrap { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+    .top { display: flex; justify-content: flex-end; padding: 32px 0 0; }
     .btn { display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px; background: var(--paper); border: var(--border); border-radius: 14px; box-shadow: var(--shadow-sm); font: inherit; font-weight: 900; font-size: 1.05rem; color: var(--ink); text-decoration: none; cursor: pointer; transition: transform .12s ease, box-shadow .12s ease; white-space: nowrap; }
     .btn:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--ink); }
     .btn-primary { background: var(--yellow); }
-    .card { background: var(--paper); border: var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 52px 36px; text-align: center; margin: 64px auto; }
+    .btn-sm { padding: 8px 16px; font-size: .95rem; box-shadow: 3px 3px 0 var(--ink); }
+    .card { background: var(--paper); border: var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 52px 36px; text-align: center; margin: 32px auto 64px; }
     .ok { width: 72px; height: 72px; margin: 0 auto 20px; background: var(--green); border: var(--border); border-radius: 50%; display: grid; place-items: center; font-size: 36px; font-weight: 900; box-shadow: var(--shadow-sm); }
     .card h1 { font-size: clamp(1.8rem, 4.5vw, 2.4rem); font-weight: 900; margin-bottom: 12px; }
     .card p { font-weight: 600; margin-bottom: 12px; }
@@ -41,15 +43,18 @@
   </style>
 </head>
 <body>
+  <div class="wrap top">
+    <button id="langToggle" class="btn btn-sm" type="button">EN</button>
+  </div>
   <main class="wrap">
     <div class="card">
       <div class="ok">✔</div>
-      <h1>支付成功 / Payment successful</h1>
-      <p>感谢购买智能仓库 Smart Vault！收据已由 Creem 发送至你的邮箱。<br>Thank you for purchasing Smart Vault! Your receipt has been sent by Creem to your email.</p>
-      <p>如需帮助请加入 Discord，或联系 <a href="mailto:abevol@pm.me">abevol@pm.me</a>。<br>Join Discord for support, or contact <a href="mailto:abevol@pm.me">abevol@pm.me</a>.</p>
+      <h1 data-i18n="success.title">支付成功</h1>
+      <p data-i18n="success.desc1">感谢购买智能仓库 Smart Vault！收据已由 Creem 发送至你的邮箱。</p>
+      <p><span data-i18n="success.help">如需帮助请联系 Discord 社区支持，或发送邮件至</span> <a href="mailto:abevol@pm.me">abevol@pm.me</a><span data-i18n="success.end">。</span></p>
       <div class="actions">
-        <a class="btn btn-primary" href="index.html">返回首页 / Back to Home</a>
-        <a class="btn btn-discord" href="https://discord.gg/SPQCAVA9R" target="_blank" rel="noopener">加入 Discord / Join Discord</a>
+        <a class="btn btn-primary" href="index.html" data-i18n="success.home">返回首页</a>
+        <a class="btn btn-discord" href="https://discord.gg/SPQCAVA9R" target="_blank" rel="noopener" data-i18n="success.discord">加入 Discord</a>
       </div>
     </div>
   </main>
@@ -57,12 +62,72 @@
   <footer>
     <div class="wrap">
       <div class="footer-links">
-        <a href="index.html">Home 首页</a>
-        <a href="privacy.html">Privacy 隐私政策</a>
-        <a href="terms.html">Terms 服务条款</a>
+        <a href="index.html">Home</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
       </div>
       <div class="footer-copy">© 2026 abevol · Soulforge Pathfinder</div>
     </div>
   </footer>
+
+  <script>
+    (function () {
+      var DICT = {
+        zh: {
+          "meta.title": "支付成功 — 铸魂领路者 Soulforge Pathfinder",
+          "meta.desc": "支付成功：收据由 Creem 发送，Discord 社区支持。",
+          "success.title": "支付成功",
+          "success.desc1": "感谢购买智能仓库 Smart Vault！收据已由 Creem 发送至你的邮箱。",
+          "success.help": "如需帮助请联系 Discord 社区支持，或发送邮件至",
+          "success.end": "。",
+          "success.home": "返回首页",
+          "success.discord": "加入 Discord"
+        },
+        en: {
+          "meta.title": "Payment successful — Soulforge Pathfinder",
+          "meta.desc": "Payment successful: receipt sent by Creem, Discord community support.",
+          "success.title": "Payment successful",
+          "success.desc1": "Thank you for purchasing Smart Vault! Receipt sent by Creem to your email.",
+          "success.help": "Need help? Reach out via Discord for community support, or email",
+          "success.end": ".",
+          "success.home": "Back to home",
+          "success.discord": "Join Discord"
+        }
+      };
+
+      function detectLang() {
+        var saved = null;
+        try { saved = localStorage.getItem("sfp-lang"); } catch (e) {}
+        if (saved === "zh" || saved === "en") return saved;
+        var nav = (navigator.languages && navigator.languages[0]) || navigator.language || "";
+        return /^zh/i.test(nav) ? "zh" : "en";
+      }
+
+      function applyLang(lang) {
+        var dict = DICT[lang];
+        document.documentElement.lang = lang === "zh" ? "zh-CN" : "en";
+        document.title = dict["meta.title"];
+        var metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc) metaDesc.setAttribute("content", dict["meta.desc"]);
+        var nodes = document.querySelectorAll("[data-i18n]");
+        for (var i = 0; i < nodes.length; i++) {
+          var key = nodes[i].getAttribute("data-i18n");
+          if (dict[key] !== undefined) nodes[i].textContent = dict[key];
+        }
+        var toggle = document.getElementById("langToggle");
+        toggle.textContent = lang === "zh" ? "EN" : "中文";
+        toggle.setAttribute("aria-label", lang === "zh" ? "Switch to English" : "切换到中文");
+      }
+
+      var current = detectLang();
+      applyLang(current);
+
+      document.getElementById("langToggle").addEventListener("click", function () {
+        current = current === "zh" ? "en" : "zh";
+        try { localStorage.setItem("sfp-lang", current); } catch (e) {}
+        applyLang(current);
+      });
+    })();
+  </script>
 </body>
 </html>
