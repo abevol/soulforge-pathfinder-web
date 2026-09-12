@@ -232,6 +232,25 @@
     .btn-discord { background: #5865f2; color: #fff; font-size: 1.1rem; padding: 16px 30px; }
     .btn-discord svg { width: 24px; height: 24px; }
 
+    /* ===== 定价 ===== */
+    .pricing { background: var(--cyan); }
+    .price-grid {
+      display: grid; gap: 28px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      max-width: 860px; margin: 0 auto;
+    }
+    .price-card { text-align: left; }
+    .price-card.featured { background: var(--yellow); }
+    .price {
+      font-size: 2rem; font-weight: 900; letter-spacing: -.01em;
+      margin: 6px 0 10px;
+    }
+    .price small { font-size: 1rem; font-weight: 700; }
+    .price-list { list-style: none; margin: 14px 0 24px; }
+    .price-list li { font-weight: 600; font-size: .98rem; padding: 6px 0 6px 28px; position: relative; }
+    .price-list li::before { content: "✔"; position: absolute; left: 2px; font-weight: 900; }
+    .price-note { font-size: .9rem; font-weight: 700; margin-bottom: 22px; }
+
     /* ===== 页脚 ===== */
     footer { background: var(--ink); color: #fff; padding: 48px 0 40px; }
     .footer-inner { text-align: center; }
@@ -261,6 +280,7 @@
       <nav class="nav-links">
         <a href="#features" data-i18n="nav.features">功能特性</a>
         <a href="#start" data-i18n="nav.start">快速开始</a>
+        <a href="#pricing" data-i18n="nav.pricing">定价</a>
         <a href="#community" data-i18n="nav.community">社区</a>
       </nav>
       <div class="nav-actions">
@@ -277,7 +297,7 @@
     <!-- Hero -->
     <section class="hero">
       <div class="wrap">
-        <span class="badge" data-i18n="hero.badge">免费开源 · 非作弊 QoL 模组</span>
+        <span class="badge" data-i18n="hero.badge">免费下载 · 单机 QoL 模组</span>
         <div class="hero-eyes" aria-hidden="true">
           <span class="eye"></span>
           <span class="eye"></span>
@@ -316,7 +336,7 @@
           <article class="card">
             <div class="card-icon c-yellow">📦</div>
             <h3 data-i18n="f1.title">智能仓库</h3>
-            <p data-i18n="f1.desc">20×22 超大智能仓库页：物品自动堆叠合并，模板布局一键摆放，布局跨存档持久保存，支持数量标签与逐个取用。</p>
+            <p data-i18n="f1.desc">20×22 超大智能仓库页：物品自动堆叠合并，模板布局一键摆放，布局跨存档持久保存，支持数量标签与逐个取用。（付费功能，$19.9 一次性解锁）</p>
           </article>
           <article class="card">
             <div class="card-icon c-cyan">🧭</div>
@@ -382,7 +402,51 @@
     </section>
 
     <div class="wave" style="background: var(--yellow);" aria-hidden="true">
-      <svg viewBox="0 0 1440 64" preserveAspectRatio="none"><path d="M0,32 C240,64 480,0 720,32 C960,64 1200,0 1440,32 L1440,64 L0,64 Z" fill="#ff90e8"/></svg>
+      <svg viewBox="0 0 1440 64" preserveAspectRatio="none"><path d="M0,32 C240,64 480,0 720,32 C960,64 1200,0 1440,32 L1440,64 L0,64 Z" fill="#9be8ff"/></svg>
+    </div>
+
+    <!-- Pricing -->
+    <section class="section pricing" id="pricing">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2 data-i18n="pricing.title">定价</h2>
+          <p data-i18n="pricing.sub">免费开玩，智能仓库一次性买断</p>
+        </div>
+        <div class="price-grid">
+          <article class="card price-card">
+            <div class="card-icon c-green">🎮</div>
+            <h3 data-i18n="pricing.free.name">免费版</h3>
+            <div class="price">$0</div>
+            <ul class="price-list">
+              <li data-i18n="pricing.free.li1">离屏指示</li>
+              <li data-i18n="pricing.free.li2">武器指示</li>
+              <li data-i18n="pricing.free.li3">格子个性化</li>
+              <li data-i18n="pricing.free.li4">游戏内配置</li>
+              <li data-i18n="pricing.free.li5">体验修复</li>
+            </ul>
+            <p class="price-note" data-i18n="pricing.free.note">免费 / Free</p>
+            <a class="btn btn-sm" href="https://github.com/abevol/soulforge-pathfinder-releases/releases/latest" data-i18n="pricing.free.button">⬇ 下载安装器</a>
+          </article>
+          <article class="card price-card featured">
+            <div class="card-icon c-yellow">📦</div>
+            <h3 data-i18n="pricing.paid.name">智能仓库 Smart Vault</h3>
+            <div class="price">$19.9 <small data-i18n="pricing.paid.per">一次性买断</small></div>
+            <ul class="price-list">
+              <li data-i18n="pricing.paid.li1">20×22 智能仓库</li>
+              <li data-i18n="pricing.paid.li2">模板一键摆放</li>
+              <li data-i18n="pricing.paid.li3">布局跨存档保存</li>
+              <li data-i18n="pricing.paid.li4">数量标签与逐个取用</li>
+            </ul>
+            <p class="price-note" data-i18n="pricing.paid.note">一次性买断，非订阅，无续费 / One-time purchase, no subscription</p>
+            <!-- TODO(Task2): 替换为 Creem checkoutUrl -->
+            <a class="btn btn-sm btn-ink" id="buySmartVault" href="#" data-i18n="pricing.paid.button">购买智能仓库</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <div class="wave" style="background: var(--cyan);" aria-hidden="true">
+      <svg viewBox="0 0 1440 64" preserveAspectRatio="none"><path d="M0,32 C240,0 480,64 720,32 C960,0 1200,64 1440,32 L1440,64 L0,64 Z" fill="#ff90e8"/></svg>
     </div>
 
     <!-- Community CTA -->
@@ -407,11 +471,14 @@
   <footer>
     <div class="wrap footer-inner">
       <div class="footer-brand" data-i18n="footer.brand">铸魂领路者</div>
-      <p class="footer-disclaimer" data-i18n="footer.disclaimer">本模组仅供学习交流使用，请勿用于商业用途；模组旨在提高游戏体验而非破坏游戏体验。游戏开发不易，请支持正版。</p>
+      <p class="footer-disclaimer" data-i18n="footer.disclaimer">需 Steam 正版《铸魂迷途》(App 3839250) 方可使用；本工具为独立软件，与开发者 Ziyue / 发行商 YuetteGames 无关联。Payments processed by Creem as merchant of record.</p>
       <div class="footer-links">
         <a href="https://store.steampowered.com/app/3839250" target="_blank" rel="noopener" data-i18n="footer.steam">Steam：《铸魂迷途》</a>
         <a href="https://discord.gg/SPQCAVA9R" target="_blank" rel="noopener">Discord</a>
         <a href="https://gitee.com/floss/SoulforgePathfinder/releases/latest" target="_blank" rel="noopener" data-i18n="footer.release">更新发布页</a>
+        <a href="mailto:abevol@pm.me" data-i18n="footer.support">Support: abevol@pm.me</a>
+        <a href="privacy.html" data-i18n="footer.privacy">Privacy</a>
+        <a href="terms.html" data-i18n="footer.terms">Terms</a>
       </div>
       <div class="footer-copy">© 2026 abevol · Soulforge Pathfinder</div>
     </div>
@@ -426,9 +493,10 @@
           "brand": "铸魂领路者",
           "nav.features": "功能特性",
           "nav.start": "快速开始",
+          "nav.pricing": "定价",
           "nav.community": "社区",
           "nav.discord": "Discord",
-          "hero.badge": "免费开源 · 非作弊 QoL 模组",
+          "hero.badge": "免费下载 · 单机 QoL 模组",
           "hero.title": "铸魂领路者",
           "hero.latin": "Soulforge Pathfinder",
           "hero.sub": "为《铸魂迷途》(Soulforge Lost Path) 打造的体验增强模组：智能仓库、离屏指示器、游戏内配置，一个安装器全搞定。",
@@ -441,7 +509,7 @@
           "features.title": "功能特性",
           "features.sub": "每一项都为提升游戏体验而生",
           "f1.title": "智能仓库",
-          "f1.desc": "20×22 超大智能仓库页：物品自动堆叠合并，模板布局一键摆放，布局跨存档持久保存，支持数量标签与逐个取用。",
+          "f1.desc": "20×22 超大智能仓库页：物品自动堆叠合并，模板布局一键摆放，布局跨存档持久保存，支持数量标签与逐个取用。（付费功能，$19.9 一次性解锁）",
           "f2.title": "离屏指示器",
           "f2.desc": "宝箱、Boss 宝箱、坟墓、祭坛等屏外目标显示方向箭头，附带实际距离与本地化名称，热键 T 一键开关。",
           "f3.title": "超级武器指示",
@@ -461,13 +529,34 @@
           "s3.title": "启动游戏",
           "s3.desc": "进入游戏后按 Home 键打开模组配置，按喜好开启功能。",
           "start.download": "⬇ 下载安装器",
+          "pricing.title": "定价",
+          "pricing.sub": "免费开玩，智能仓库一次性买断",
+          "pricing.free.name": "免费版",
+          "pricing.free.li1": "离屏指示",
+          "pricing.free.li2": "武器指示",
+          "pricing.free.li3": "格子个性化",
+          "pricing.free.li4": "游戏内配置",
+          "pricing.free.li5": "体验修复",
+          "pricing.free.note": "免费 / Free",
+          "pricing.free.button": "⬇ 下载安装器",
+          "pricing.paid.name": "智能仓库 Smart Vault",
+          "pricing.paid.per": "一次性买断",
+          "pricing.paid.li1": "20×22 智能仓库",
+          "pricing.paid.li2": "模板一键摆放",
+          "pricing.paid.li3": "布局跨存档保存",
+          "pricing.paid.li4": "数量标签与逐个取用",
+          "pricing.paid.note": "一次性买断，非订阅，无续费 / One-time purchase, no subscription",
+          "pricing.paid.button": "购买智能仓库",
           "cta.title": "加入社区",
           "cta.desc": "反馈问题、第一时间获取更新动态，与其他玩家交流玩法与模组建议。",
           "cta.button": "加入 Discord 频道",
           "footer.brand": "铸魂领路者",
-          "footer.disclaimer": "本模组仅供学习交流使用，请勿用于商业用途；模组旨在提高游戏体验而非破坏游戏体验。游戏开发不易，请支持正版。",
+          "footer.disclaimer": "需 Steam 正版《铸魂迷途》(App 3839250) 方可使用；本工具为独立软件，与开发者 Ziyue / 发行商 YuetteGames 无关联。Payments processed by Creem as merchant of record.",
           "footer.steam": "Steam：《铸魂迷途》",
-          "footer.release": "更新发布页"
+          "footer.release": "更新发布页",
+          "footer.support": "Support: abevol@pm.me",
+          "footer.privacy": "Privacy",
+          "footer.terms": "Terms"
         },
         en: {
           "meta.title": "Soulforge Pathfinder — QoL Mod for Soulforge Lost Path",
@@ -475,9 +564,10 @@
           "brand": "Soulforge Pathfinder",
           "nav.features": "Features",
           "nav.start": "Get Started",
+          "nav.pricing": "Pricing",
           "nav.community": "Community",
           "nav.discord": "Discord",
-          "hero.badge": "Free & Open · Non-cheat QoL Mod",
+          "hero.badge": "Free Download · Single-player QoL Mod",
           "hero.title": "Soulforge Pathfinder",
           "hero.latin": "A Mod for Soulforge Lost Path",
           "hero.sub": "A quality-of-life enhancement mod for Soulforge Lost Path: smart vault, off-screen indicators, in-game config — all in one installer.",
@@ -490,7 +580,7 @@
           "features.title": "Features",
           "features.sub": "Everything here exists to make your runs better",
           "f1.title": "Smart Vault",
-          "f1.desc": "A 20×22 smart vault page: items stack and merge automatically, template layouts snap into place with one click, and layouts persist across saves — with quantity labels and per-item withdrawal.",
+          "f1.desc": "A 20×22 smart vault page: items stack and merge automatically, template layouts snap into place with one click, and layouts persist across saves — with quantity labels and per-item withdrawal. (Paid feature, $19.9 one-time unlock)",
           "f2.title": "Off-screen Indicators",
           "f2.desc": "Directional arrows for chests, boss chests, graves, altars and more — with real distance and localized names. Toggle everything with hotkey T.",
           "f3.title": "Super Weapon Status",
@@ -510,13 +600,34 @@
           "s3.title": "Play",
           "s3.desc": "Launch the game, press Home to open the mod config, and flip on the features you like.",
           "start.download": "⬇ Download Installer",
+          "pricing.title": "Pricing",
+          "pricing.sub": "Free to play, Smart Vault with one-time purchase",
+          "pricing.free.name": "Free",
+          "pricing.free.li1": "Off-screen indicators",
+          "pricing.free.li2": "Weapon status",
+          "pricing.free.li3": "Slot personalization",
+          "pricing.free.li4": "In-game config",
+          "pricing.free.li5": "Quality fixes",
+          "pricing.free.note": "Free",
+          "pricing.free.button": "⬇ Download Installer",
+          "pricing.paid.name": "Smart Vault",
+          "pricing.paid.per": "one-time",
+          "pricing.paid.li1": "20×22 Smart Vault",
+          "pricing.paid.li2": "One-click template layouts",
+          "pricing.paid.li3": "Layouts persist across saves",
+          "pricing.paid.li4": "Quantity labels & per-item withdrawal",
+          "pricing.paid.note": "One-time purchase, no subscription",
+          "pricing.paid.button": "Buy Smart Vault",
           "cta.title": "Join the Community",
           "cta.desc": "Report issues, get update news first, and trade tips with other players.",
           "cta.button": "Join the Discord",
           "footer.brand": "Soulforge Pathfinder",
-          "footer.disclaimer": "This mod is for learning and personal use only, not for commercial purposes. It aims to improve the game experience, not break it. Please support the original game.",
+          "footer.disclaimer": "Requires a legitimate Steam copy of Soulforge Lost Path (App 3839250). Independent software, not affiliated with Ziyue / YuetteGames. Payments processed by Creem as merchant of record.",
           "footer.steam": "Steam: Soulforge Lost Path",
-          "footer.release": "Release Page"
+          "footer.release": "Release Page",
+          "footer.support": "Support: abevol@pm.me",
+          "footer.privacy": "Privacy",
+          "footer.terms": "Terms"
         }
       };
 
