@@ -50,8 +50,10 @@
     .btn:active { transform: translate(4px, 4px); box-shadow: 0 0 0 var(--ink); }
     .btn:focus-visible { outline: 3px dashed var(--ink); outline-offset: 3px; }
     .btn-primary { background: var(--yellow); font-size: 1.15rem; padding: 16px 34px; }
-    .btn-ink { background: var(--ink); color: #fff; }
-    .btn-ink:hover { box-shadow: 2px 2px 0 #fff; }
+    .btn-ink { background: var(--ink); color: #fff; box-shadow: 4px 4px 0 #8f8f8f; }
+    .btn-ink:hover { box-shadow: 2px 2px 0 #8f8f8f; }
+    .btn-ink:active { box-shadow: 0 0 0 #8f8f8f; }
+    .btn-ink.btn-sm { box-shadow: 3px 3px 0 #8f8f8f; }
     .btn-sm { padding: 8px 16px; font-size: .95rem; box-shadow: 3px 3px 0 var(--ink); }
     .btn svg { width: 20px; height: 20px; flex: none; }
 
@@ -424,12 +426,12 @@
               <li data-i18n="pricing.free.li4">游戏内配置</li>
               <li data-i18n="pricing.free.li5">体验修复</li>
             </ul>
-            <p class="price-note" data-i18n="pricing.free.note">免费 / Free</p>
+            <p class="price-note" data-i18n="pricing.free.note">免费</p>
             <a class="btn btn-sm" href="https://github.com/abevol/soulforge-pathfinder-releases/releases/latest" data-i18n="pricing.free.button">⬇ 下载安装器</a>
           </article>
           <article class="card price-card featured">
             <div class="card-icon c-yellow">📦</div>
-            <h3 data-i18n="pricing.paid.name">智能仓库 Smart Vault</h3>
+            <h3 data-i18n="pricing.paid.name">智能仓库</h3>
             <div class="price">$19.9 <small data-i18n="pricing.paid.per">一次性买断</small></div>
             <ul class="price-list">
               <li data-i18n="pricing.paid.li1">20×22 智能仓库</li>
@@ -437,7 +439,7 @@
               <li data-i18n="pricing.paid.li3">布局跨存档保存</li>
               <li data-i18n="pricing.paid.li4">数量标签与逐个取用</li>
             </ul>
-            <p class="price-note" data-i18n="pricing.paid.note">一次性买断，非订阅，无续费 / One-time purchase, no subscription</p>
+            <p class="price-note" data-i18n="pricing.paid.note">一次性买断，非订阅，无续费</p>
             <!-- TODO(Task2): 替换为 Creem checkoutUrl -->
             <a class="btn btn-sm btn-ink" id="buySmartVault" href="#" data-i18n="pricing.paid.button">购买智能仓库</a>
           </article>
@@ -471,11 +473,11 @@
   <footer>
     <div class="wrap footer-inner">
       <div class="footer-brand" data-i18n="footer.brand">铸魂领路者</div>
-      <p class="footer-disclaimer" data-i18n="footer.disclaimer">需 Steam 正版《铸魂迷途》(App 3839250) 方可使用；本工具为独立软件，与开发者 Ziyue / 发行商 YuetteGames 无关联。Payments processed by Creem as merchant of record.</p>
+      <p class="footer-disclaimer" data-i18n="footer.disclaimer">需 Steam 正版《铸魂迷途》(App 3839250) 方可使用；本工具为独立软件，与开发者 Ziyue / 发行商 YuetteGames 无关联；支付由 Creem 作为 Merchant of Record 处理。</p>
       <div class="footer-links">
-        <a href="mailto:abevol@pm.me" data-i18n="footer.support">Support: abevol@pm.me</a>
-        <a href="privacy.html" data-i18n="footer.privacy">Privacy</a>
-        <a href="terms.html" data-i18n="footer.terms">Terms</a>
+        <a href="mailto:abevol@pm.me" data-i18n="footer.support">客服支持：abevol@pm.me</a>
+        <a href="privacy.html" data-i18n="footer.privacy">隐私政策</a>
+        <a href="terms.html" data-i18n="footer.terms">服务条款</a>
       </div>
       <div class="footer-copy">© 2026 abevol · Soulforge Pathfinder</div>
     </div>
@@ -534,24 +536,24 @@
           "pricing.free.li3": "格子个性化",
           "pricing.free.li4": "游戏内配置",
           "pricing.free.li5": "体验修复",
-          "pricing.free.note": "免费 / Free",
+          "pricing.free.note": "免费",
           "pricing.free.button": "⬇ 下载安装器",
-          "pricing.paid.name": "智能仓库 Smart Vault",
+          "pricing.paid.name": "智能仓库",
           "pricing.paid.per": "一次性买断",
           "pricing.paid.li1": "20×22 智能仓库",
           "pricing.paid.li2": "模板一键摆放",
           "pricing.paid.li3": "布局跨存档保存",
           "pricing.paid.li4": "数量标签与逐个取用",
-          "pricing.paid.note": "一次性买断，非订阅，无续费 / One-time purchase, no subscription",
+          "pricing.paid.note": "一次性买断，非订阅，无续费",
           "pricing.paid.button": "购买智能仓库",
           "cta.title": "加入社区",
           "cta.desc": "反馈问题、第一时间获取更新动态，与其他玩家交流玩法与模组建议。",
           "cta.button": "加入 Discord 频道",
           "footer.brand": "铸魂领路者",
-          "footer.disclaimer": "需 Steam 正版《铸魂迷途》(App 3839250) 方可使用；本工具为独立软件，与开发者 Ziyue / 发行商 YuetteGames 无关联。Payments processed by Creem as merchant of record.",
-          "footer.support": "Support: abevol@pm.me",
-          "footer.privacy": "Privacy",
-          "footer.terms": "Terms"
+          "footer.disclaimer": "需 Steam 正版《铸魂迷途》(App 3839250) 方可使用；本工具为独立软件，与开发者 Ziyue / 发行商 YuetteGames 无关联；支付由 Creem 作为 Merchant of Record 处理。",
+          "footer.support": "客服支持：abevol@pm.me",
+          "footer.privacy": "隐私政策",
+          "footer.terms": "服务条款"
         },
         en: {
           "meta.title": "Soulforge Pathfinder — QoL Mod for Soulforge Lost Path",
