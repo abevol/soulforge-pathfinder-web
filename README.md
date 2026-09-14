@@ -2,7 +2,7 @@
 
 《铸魂领路者》(Soulforge Pathfinder) 官方落地页 —— 《铸魂迷途》(Soulforge Lost Path) 的 BepInEx 体验增强模组。
 
-**线上地址**: https://abevol.github.io/soulforge-pathfinder-web/
+**线上地址**: https://soulforge.xuexiai.app/
 
 ## 站点结构
 
